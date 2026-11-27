@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-12 Verificar estado del combate
+participant "Sistema" as P1
+actor "Jugador" as P2
+
+P1 -> P2 : Verificar_estado_combate
+P1 -> P2 : Estado_combate_verificado
+@enduml

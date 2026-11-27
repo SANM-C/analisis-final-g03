@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-09 Calcular daño
+participant "Sistema" as P1
+actor "Jugador" as P2
+
+P1 -> P2 : Calcular_daño
+P1 -> P2 : Daño_calculado
+@enduml

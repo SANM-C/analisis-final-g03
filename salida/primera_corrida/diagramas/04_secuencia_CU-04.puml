@@ -1,0 +1,8 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-04 Establecer turno inicial
+participant "Sistema" as P1
+actor "Jugador" as P2
+
+P1 -> P2 : Establecer_turno_inicial
+@enduml

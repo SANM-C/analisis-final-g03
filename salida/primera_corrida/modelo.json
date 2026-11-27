@@ -1,0 +1,600 @@
+{
+  "modulo": "Arena de combate",
+  "actores": [
+    {
+      "req_ids": [
+        "RF-01",
+        "RF-02",
+        "RF-03",
+        "RF-04",
+        "RF-05",
+        "RF-06",
+        "RF-07",
+        "RF-08",
+        "RF-09",
+        "RF-10",
+        "RF-11",
+        "RF-12",
+        "RF-13",
+        "RF-14",
+        "RF-15",
+        "RF-16",
+        "RN-01",
+        "RN-02",
+        "RN-03",
+        "RN-04",
+        "RN-05",
+        "RN-06",
+        "RN-07",
+        "RN-08",
+        "RN-09",
+        "RN-10",
+        "RN-11"
+      ],
+      "nombre": "Jugador",
+      "descripcion": ""
+    }
+  ],
+  "casos_uso": [
+    {
+      "req_ids": [
+        "RF-01"
+      ],
+      "id": "CU-01",
+      "nombre": "Seleccionar participantes",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador selecciona dos personajes diferentes para un combate.",
+      "incluye": [],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-02"
+      ],
+      "id": "CU-02",
+      "nombre": "Iniciar combate",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador solicita el inicio del combate entre los dos personajes seleccionados.",
+      "incluye": [
+        "CU-01"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-03"
+      ],
+      "id": "CU-03",
+      "nombre": "Validar participantes",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema verifica que ambos personajes tengan puntos de vida superiores a cero antes de iniciar el combate.",
+      "incluye": [
+        "CU-02"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-04"
+      ],
+      "id": "CU-04",
+      "nombre": "Establecer turno inicial",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema asigna el primer turno al personaje que inició el enfrentamiento.",
+      "incluye": [
+        "CU-03"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-05"
+      ],
+      "id": "CU-05",
+      "nombre": "Gestionar turnos",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema alternará los turnos entre los dos personajes después de cada acción válida, mientras el combate continúe.",
+      "incluye": [
+        "CU-04"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-06"
+      ],
+      "id": "CU-06",
+      "nombre": "Seleccionar acción",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "Durante su turno, el participante podrá seleccionar una de las acciones disponibles: ataque o defensa (esquiva).",
+      "incluye": [
+        "CU-05"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-07"
+      ],
+      "id": "CU-07",
+      "nombre": "Ejecutar ataque",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema ejecutará el ataque del personaje que tenga el turno correspondiente contra su oponente.",
+      "incluye": [
+        "CU-06"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-08"
+      ],
+      "id": "CU-08",
+      "nombre": "Ejecutar defensa",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema permitirá activar una acción defensiva para esquivar el siguiente ataque del oponente durante el siguiente turno de este.",
+      "incluye": [
+        "CU-06"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-09"
+      ],
+      "id": "CU-09",
+      "nombre": "Calcular daño",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema calculará el daño de un ataque usando el atributo de ataque del personaje atacante y respetando un daño mínimo de 1 punto.",
+      "incluye": [
+        "CU-07"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-10"
+      ],
+      "id": "CU-10",
+      "nombre": "Aplicar daño",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema descontará los puntos de daño de la vida del personaje afectado, excepto cuando el ataque haya sido esquivado.",
+      "incluye": [
+        "CU-09"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-11"
+      ],
+      "id": "CU-11",
+      "nombre": "Actualizar puntos de vida",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema actualizará los puntos de vida del personaje afectado y reflejará el nuevo valor.",
+      "incluye": [
+        "CU-10"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-12"
+      ],
+      "id": "CU-12",
+      "nombre": "Verificar estado del combate",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "Después de cada acción, el sistema comprobará si alguno de los personajes ha llegado a 0 puntos de vida.",
+      "incluye": [
+        "CU-11"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-13"
+      ],
+      "id": "CU-13",
+      "nombre": "Finalizar combate",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema finalizará inmediatamente el combate cuando uno de los personajes llegue a 0 puntos de vida.",
+      "incluye": [
+        "CU-12"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-14"
+      ],
+      "id": "CU-14",
+      "nombre": "Determinar ganador",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema identificará como ganador al personaje que conserve puntos de vida superiores a 0 cuando su oponente llegue a 0.",
+      "incluye": [
+        "CU-13"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-15"
+      ],
+      "id": "CU-15",
+      "nombre": "Registrar resultado",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema almacenará un único resultado por combate finalizado, incluyendo el combate, sus participantes y el ganador.",
+      "incluye": [
+        "CU-14"
+      ],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-16"
+      ],
+      "id": "CU-16",
+      "nombre": "Mostrar resultado",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El sistema presentará el resultado final del combate y los datos de los personajes participantes.",
+      "incluye": [
+        "CU-15"
+      ],
+      "extiende": []
+    }
+  ],
+  "entidades": [
+    {
+      "req_ids": [
+        "RN-01",
+        "RN-02",
+        "RN-03",
+        "RN-04",
+        "RN-05",
+        "RN-06",
+        "RN-07",
+        "RN-08",
+        "RN-09",
+        "RN-10",
+        "RN-11"
+      ],
+      "nombre": "Personaje",
+      "es_abstracta": false,
+      "hereda_de": null,
+      "atributos": [
+        {
+          "nombre": "puntos_vida",
+          "tipo": "entero",
+          "es_clave": false
+        },
+        {
+          "nombre": "atributo_ataque",
+          "tipo": "entero",
+          "es_clave": false
+        }
+      ],
+      "metodos": [
+        {
+          "req_ids": [
+            "RF-02",
+            "RF-03",
+            "RF-04",
+            "RF-05"
+          ],
+          "nombre": "iniciar_combate",
+          "descripcion": "Inicia el combate con otro personaje.",
+          "retorno": "ninguno"
+        },
+        {
+          "req_ids": [
+            "RF-06",
+            "RF-07",
+            "RF-08",
+            "RF-09",
+            "RF-10",
+            "RF-11",
+            "RF-12",
+            "RF-13",
+            "RF-14",
+            "RF-15",
+            "RF-16"
+          ],
+          "nombre": "realizar_accion",
+          "descripcion": "Realiza una acción durante el turno.",
+          "retorno": "ninguno"
+        }
+      ]
+    }
+  ],
+  "relaciones": [
+    {
+      "req_ids": [],
+      "desde": "Personaje",
+      "hasta": "Personaje",
+      "tipo": "asociacion",
+      "multiplicidad_desde": "1",
+      "multiplicidad_hasta": "1",
+      "etiqueta": "enfrentamiento_con"
+    }
+  ],
+  "secuencias": [
+    {
+      "req_ids": [],
+      "caso_uso": "CU-01",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Sistema",
+          "texto": "Seleccionar_participantes"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Participantes_seleccionados"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-02",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Sistema",
+          "texto": "Iniciar_combate"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Combate_iniciado"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-03",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Validar_participantes"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Participantes_validados"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-04",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Establecer_turno_inicial"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-05",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Gestionar_turnos"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-06",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Sistema",
+          "texto": "Seleccionar_accion"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Accion_seleccionada"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-07",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Ejecutar_ataque"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Ataque_ejecutado"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-08",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Sistema",
+          "texto": "Seleccionar_defensa"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Defensa_seleccionada"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-09",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Calcular_daño"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Daño_calculado"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-10",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Aplicar_daño"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Daño_aplicado"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-11",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Actualizar_puntos_vida"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Puntos_vida_actualizados"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-12",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Verificar_estado_combate"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Estado_combate_verificado"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-13",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Finalizar_combate"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Combate_finalizado"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-14",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Determinar_ganador"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Ganador_identificado"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-15",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Registrar_resultado"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Resultado_registrado"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-16",
+      "mensajes": [
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Mostrar_resultado"
+        },
+        {
+          "de": "Sistema",
+          "a": "Jugador",
+          "texto": "Resultado_mostrado"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-03 Validar participantes
+participant "Sistema" as P1
+actor "Jugador" as P2
+
+P1 -> P2 : Validar_participantes
+P1 -> P2 : Participantes_validados
+@enduml

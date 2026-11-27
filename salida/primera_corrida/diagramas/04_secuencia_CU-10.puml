@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-10 Aplicar daño
+participant "Sistema" as P1
+actor "Jugador" as P2
+
+P1 -> P2 : Aplicar_daño
+P1 -> P2 : Daño_aplicado
+@enduml

@@ -1,0 +1,57 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+left to right direction
+skinparam packageStyle rectangle
+actor "Jugador" as A1
+
+rectangle "Arena de combate" {
+  usecase "CU-01 Seleccionar participantes" as CU_01
+  usecase "CU-02 Iniciar combate" as CU_02
+  usecase "CU-03 Validar participantes" as CU_03
+  usecase "CU-04 Establecer turno inicial" as CU_04
+  usecase "CU-05 Gestionar turnos" as CU_05
+  usecase "CU-06 Seleccionar acción" as CU_06
+  usecase "CU-07 Ejecutar ataque" as CU_07
+  usecase "CU-08 Ejecutar defensa" as CU_08
+  usecase "CU-09 Calcular daño" as CU_09
+  usecase "CU-10 Aplicar daño" as CU_10
+  usecase "CU-11 Actualizar puntos de vida" as CU_11
+  usecase "CU-12 Verificar estado del combate" as CU_12
+  usecase "CU-13 Finalizar combate" as CU_13
+  usecase "CU-14 Determinar ganador" as CU_14
+  usecase "CU-15 Registrar resultado" as CU_15
+  usecase "CU-16 Mostrar resultado" as CU_16
+}
+
+A1 --> CU_01
+A1 --> CU_02
+CU_02 .> CU_01 : <<include>>
+A1 --> CU_03
+CU_03 .> CU_02 : <<include>>
+A1 --> CU_04
+CU_04 .> CU_03 : <<include>>
+A1 --> CU_05
+CU_05 .> CU_04 : <<include>>
+A1 --> CU_06
+CU_06 .> CU_05 : <<include>>
+A1 --> CU_07
+CU_07 .> CU_06 : <<include>>
+A1 --> CU_08
+CU_08 .> CU_06 : <<include>>
+A1 --> CU_09
+CU_09 .> CU_07 : <<include>>
+A1 --> CU_10
+CU_10 .> CU_09 : <<include>>
+A1 --> CU_11
+CU_11 .> CU_10 : <<include>>
+A1 --> CU_12
+CU_12 .> CU_11 : <<include>>
+A1 --> CU_13
+CU_13 .> CU_12 : <<include>>
+A1 --> CU_14
+CU_14 .> CU_13 : <<include>>
+A1 --> CU_15
+CU_15 .> CU_14 : <<include>>
+A1 --> CU_16
+CU_16 .> CU_15 : <<include>>
+@enduml

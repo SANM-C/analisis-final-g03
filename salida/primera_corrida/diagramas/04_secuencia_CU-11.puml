@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-11 Actualizar puntos de vida
+participant "Sistema" as P1
+actor "Jugador" as P2
+
+P1 -> P2 : Actualizar_puntos_vida
+P1 -> P2 : Puntos_vida_actualizados
+@enduml

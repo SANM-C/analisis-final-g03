@@ -1,0 +1,13 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+' La herencia NO se traduce a ER: decidir cómo modelarla (tabla única, por clase...) es trabajo tuyo.
+hide circle
+skinparam linetype ortho
+
+entity Personaje {
+  puntos_vida : int
+  atributo_ataque : int
+}
+
+Personaje ||--|| Personaje : enfrentamiento_con
+@enduml

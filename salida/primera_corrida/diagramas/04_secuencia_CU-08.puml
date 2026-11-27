@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-08 Ejecutar defensa
+actor "Jugador" as P1
+participant "Sistema" as P2
+
+P1 -> P2 : Seleccionar_defensa
+P2 -> P1 : Defensa_seleccionada
+@enduml

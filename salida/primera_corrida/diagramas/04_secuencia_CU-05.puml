@@ -1,0 +1,8 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-05 Gestionar turnos
+participant "Sistema" as P1
+actor "Jugador" as P2
+
+P1 -> P2 : Gestionar_turnos
+@enduml

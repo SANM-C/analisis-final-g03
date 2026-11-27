@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-14 Determinar ganador
+participant "Sistema" as P1
+actor "Jugador" as P2
+
+P1 -> P2 : Determinar_ganador
+P1 -> P2 : Ganador_identificado
+@enduml
