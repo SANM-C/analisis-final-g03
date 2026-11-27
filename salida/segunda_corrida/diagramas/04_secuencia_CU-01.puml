@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-01 Seleccionar participantes
+actor "Jugador" as P1
+participant "Sistema" as P2
+
+P1 -> P2 : Seleccionar dos personajes
+P2 -> P1 : Personajes seleccionados
+@enduml

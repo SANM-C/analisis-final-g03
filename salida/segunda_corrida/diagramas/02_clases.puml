@@ -1,0 +1,14 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+skinparam classAttributeIconSize 0
+
+class Combate {
+}
+
+class Resultado {
+}
+
+class Personaje {
+}
+
+@enduml

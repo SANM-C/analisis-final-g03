@@ -1,0 +1,11 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-06 Ejecutar ataque
+participant "Sistema" as P1
+participant "Personaje2" as P2
+actor "Jugador" as P3
+
+P1 -> P2 : Ataque recibido
+P2 -> P1 : Puntos de vida actualizados
+P1 -> P3 : Resultado del ataque
+@enduml

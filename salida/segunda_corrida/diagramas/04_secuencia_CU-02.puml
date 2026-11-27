@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-02 Iniciar combate
+actor "Jugador" as P1
+participant "Sistema" as P2
+
+P1 -> P2 : Iniciar combate
+P2 -> P1 : Combate iniciado
+@enduml

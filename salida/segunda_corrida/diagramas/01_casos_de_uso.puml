@@ -1,0 +1,34 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+left to right direction
+skinparam packageStyle rectangle
+actor "Jugador" as A1
+
+rectangle "Arena de combate" {
+  usecase "CU-01 Seleccionar participantes" as CU_01
+  usecase "CU-02 Iniciar combate" as CU_02
+  usecase "CU-03 Establecer turno inicial" as CU_03
+  usecase "CU-04 Gestionar turnos" as CU_04
+  usecase "CU-05 Seleccionar acción" as CU_05
+  usecase "CU-06 Ejecutar ataque" as CU_06
+  usecase "CU-07 Ejecutar defensa" as CU_07
+  usecase "CU-08 Finalizar combate" as CU_08
+}
+
+A1 --> CU_01
+A1 --> CU_02
+CU_02 .> CU_01 : <<include>>
+A1 --> CU_03
+CU_03 .> CU_02 : <<include>>
+A1 --> CU_04
+CU_04 .> CU_02 : <<include>>
+A1 --> CU_05
+CU_05 .> CU_04 : <<include>>
+A1 --> CU_06
+CU_06 .> CU_05 : <<include>>
+A1 --> CU_07
+CU_07 .> CU_05 : <<include>>
+A1 --> CU_08
+CU_08 .> CU_06 : <<include>>
+CU_08 .> CU_07 : <<include>>
+@enduml
